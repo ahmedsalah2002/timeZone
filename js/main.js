@@ -1,5 +1,5 @@
     
-let api="http://worldtimeapi.org/api/timezone/";
+let api="https://worldtimeapi.org/api/timezone/";
 async function get(){
     let repo= await fetch (api);
     let data=await repo.json();
@@ -8,9 +8,7 @@ async function get(){
 for(let i=0;i<data.length;i++){
     let opt=document.createElement("option");
     opt.value=data[i]
-    if(data[i]=="Africa/Cairo"){
-        opt.selected=true
-    }
+    
     opt.innerHTML=data[i]
     time.appendChild(opt)
 }
